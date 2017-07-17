@@ -5,40 +5,140 @@
   <meta charset="UTF-8">
   <title>Kamusi Language Wheels</title>
 
-  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="css/select2.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <table>
+  <table id="main">
     <tr>
-      <th colspan="3">
-        Select Language
-      </th>
-    </tr>
-    <tr>
-      <td>Colors</td>
-      <td rowspan="3">
-        <div id="wheel-container"></div>
+      <td colspan="3" id="userlang-select-container">
+        <select name="userlang" id="userlang">
+            <!--value is the ISO 639-3 code,
+                text is the language's name for itself-->
+            <!--this should be loaded automatically, without user input
+                the default value will be guessed based on HTTP Headers-->
+        </select>
       </td>
-      <td>Colors</td>
-    </tr>
-    <tr>
-      <td>Colors</td>
-      <td>Colors</td>
-    </tr>
-    <tr>
-      <td>Colors</td>
-      <td>Colors</td>
     </tr>
     <tr>
       <td colspan="3">
-        Submit goes here
+        <div id="code"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="color-select">
+          <div class="color-select clearfix" data-target="5">
+            <div class="color-option R" data-color="R"></div>
+            <div class="color-option O" data-color="O"></div>
+            <div class="color-option Y" data-color="Y"></div>
+            <div class="color-option G" data-color="G"></div>
+            <div class="color-option A" data-color="A"></div>
+            <div class="color-option B" data-color="B"></div>
+            <div class="color-option P" data-color="P"></div>
+            <div class="color-option W selected" data-color="W"></div>
+            <div class="color-option X" data-color="X"></div>
+          </div>
+        </div>
+      </td>
+      <td rowspan="3">
+        <div id="wheel-container"></div>
+      </td>
+      <td>
+        <div class="color-select">
+          <div class="color-select clearfix" data-target="0">
+            <div class="color-option R" data-color="R"></div>
+            <div class="color-option O" data-color="O"></div>
+            <div class="color-option Y" data-color="Y"></div>
+            <div class="color-option G" data-color="G"></div>
+            <div class="color-option A" data-color="A"></div>
+            <div class="color-option B" data-color="B"></div>
+            <div class="color-option P" data-color="P"></div>
+            <div class="color-option W selected" data-color="W"></div>
+            <div class="color-option X" data-color="X"></div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="color-select">
+          <div class="color-select clearfix" data-target="4">
+            <div class="color-option R" data-color="R"></div>
+            <div class="color-option O" data-color="O"></div>
+            <div class="color-option Y" data-color="Y"></div>
+            <div class="color-option G" data-color="G"></div>
+            <div class="color-option A" data-color="A"></div>
+            <div class="color-option B" data-color="B"></div>
+            <div class="color-option P" data-color="P"></div>
+            <div class="color-option W selected" data-color="W"></div>
+            <div class="color-option X" data-color="X"></div>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="color-select">
+          <div class="color-select clearfix" data-target="1">
+            <div class="color-option R" data-color="R"></div>
+            <div class="color-option O" data-color="O"></div>
+            <div class="color-option Y" data-color="Y"></div>
+            <div class="color-option G" data-color="G"></div>
+            <div class="color-option A" data-color="A"></div>
+            <div class="color-option B" data-color="B"></div>
+            <div class="color-option P" data-color="P"></div>
+            <div class="color-option W selected" data-color="W"></div>
+            <div class="color-option X" data-color="X"></div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="color-select">
+          <div class="color-select clearfix" data-target="3">
+            <div class="color-option R" data-color="R"></div>
+            <div class="color-option O" data-color="O"></div>
+            <div class="color-option Y" data-color="Y"></div>
+            <div class="color-option G" data-color="G"></div>
+            <div class="color-option A" data-color="A"></div>
+            <div class="color-option B" data-color="B"></div>
+            <div class="color-option P" data-color="P"></div>
+            <div class="color-option W selected" data-color="W"></div>
+            <div class="color-option X" data-color="X"></div>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="color-select">
+          <div class="color-select clearfix" data-target="2">
+            <div class="color-option R" data-color="R"></div>
+            <div class="color-option O" data-color="O"></div>
+            <div class="color-option Y" data-color="Y"></div>
+            <div class="color-option G" data-color="G"></div>
+            <div class="color-option A" data-color="A"></div>
+            <div class="color-option B" data-color="B"></div>
+            <div class="color-option P" data-color="P"></div>
+            <div class="color-option W selected" data-color="W"></div>
+            <div class="color-option X" data-color="X"></div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <textarea id="rationale" placeholder="Rationale"></textarea>
+        <button id="submit">Submit</button>
       </td>
     </tr>
   </table>
 
+  <script src="js/svg.min.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/select2.full.min.js"></script>
+  <script src="js/iso-language-converter.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/langselect.js"></script>
 </body>
 
 </html>

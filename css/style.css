@@ -1,0 +1,94 @@
+#main {
+  text-align: center;
+  width: 100%;
+}
+
+.clearfix::before, .clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */
+}
+
+#userlang-select-container {
+  text-align: center;
+}
+
+#code {
+  text-align: center;
+  font-style: italic;
+}
+
+.color-option {
+  border: 2px solid black;
+  margin: 4px 2px 2px 2px;
+  width: 30px;
+  height: 30px;
+}
+
+[data-target="5"] .color-option, [data-target="4"] .color-option, [data-target="3"] .color-option {
+  float: right
+}
+
+[data-target="0"] .color-option, [data-target="1"] .color-option, [data-target="2"] .color-option {
+  float: left
+}
+
+.color-option.selected {
+  border: 4px solid black;
+  padding: 2px;
+  margin: 0px;
+}
+
+.color-option.R {
+  background: #FF0000
+}
+
+.color-option.O {
+  background: #FF8000
+}
+
+.color-option.Y {
+  background: #FFFF00
+}
+
+.color-option.G {
+  background: #008000
+}
+
+.color-option.A {
+  background: #00FFFF
+}
+
+.color-option.B {
+  background: #0000FF
+}
+
+.color-option.P {
+  background: #800080
+}
+
+.color-option.W {
+  background: #FFFFFF
+}
+
+.color-option.X {
+  background: #000000
+}
+
+#rationale {
+  width: 100%;
+  height: 100%;
+  min-height: 100px;
+}
+
+#submit {
+  float: right;
+}
