@@ -71,9 +71,9 @@ function loadLang(code) {
 
 function updateMailTo(){
   const subject = "Color wheel proposal for " + current_code
-  const body = "CURRENT WHEEL: " + current_wheel.join("") + "\n"
-             + "NEW WHEEL: " + colors.join("") + "\n"
-             + "RATIONALE: " + rationale.value
+  const body = "CURRENT WHEEL: \t\t" + current_wheel.join("") + " \n \n "
+             + "NEW WHEEL: \t\t" + colors.join("") + " \n \n "
+             + "RATIONALE: \t\t" + rationale.value
   submit.href = generateMailToString(subject, body)
 }
 
