@@ -72,13 +72,13 @@ function loadLang(code) {
 function updateMailTo(){
   const subject = "Color wheel proposal for " + current_code
   const body = "CURRENT WHEEL: " + current_wheel.join("") + "\n"
-             + "NEW WHEEL: " + colors.join("")
+             + "NEW WHEEL: " + colors.join("") + "\n"
              + "RATIONALE: " + rationale.value
   submit.href = generateMailToString(subject, body)
 }
 
 function generateMailToString(subject, body){
-  return "mailto:" + encodeURIComponent(KAMUSI_EMAIL)
+  return "mailto:" + KAMUSI_EMAIL
                    + "?subject=" + encodeURIComponent(subject)
                    + "&body=" + encodeURIComponent(body)
 }
