@@ -78,9 +78,9 @@ function updateMailTo(){
 }
 
 function generateMailToString(subject, body){
-  return encodeURIComponent("mailto:" + KAMUSI_EMAIL +
-  "?subject=" + subject +
-  "&body=" + body)
+  return "mailto:" + encodeURIComponent(KAMUSI_EMAIL)
+                   + "?subject=" + encodeURIComponent(subject)
+                   + "&body=" + encodeURIComponent(body)
 }
 
 $(document).ready(function(){
