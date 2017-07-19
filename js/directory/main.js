@@ -12,7 +12,8 @@ function displayWheels(start, stop) {
   let html = ""
 
   for (let lang of disp)
-    html += "<a href='viewer.html?lang=" + lang.code + "'class='wheel-card ui-button ui-widget ui-corner-all" + lang.type + "' id='" + lang.code + "'>" +
+    html += "<a href='viewer.html?lang=" + lang.code +
+    "'class='wheel-card ui-button ui-widget ui-corner-all " + lang.type + "' id='" + lang.code + "'>" +
     "<div class='code'>" + lang.code + "</div>"
     // "<div class='name'>" + + "</div>"
     +

@@ -10,7 +10,6 @@ html, body {
   width: 46%;
   margin: 2%;
   display: block;
-  /*border: 1px solid purple;*/
 }
 
 #search {
@@ -28,6 +27,14 @@ html, body {
   margin: 2%;
 }
 
-.wheel-card .code {}
+.wheel-card.human {
+  font-weight: 900;
+}
 
-.wheel-card .wheel {}
+.wheel-card .code {
+
+}
+
+.wheel-card .wheel {
+
+}
