@@ -20,44 +20,54 @@ var rtlLangs = new Set([
 ])
 
 const userlangAJAX = {
-  url: function (params) {
+  url: function(params) {
     return 'https://kamusi-cls-backend.herokuapp.com/userlangs/' + (params.term || "")
   },
   dataType: 'json',
   delay: 100,
-  processResults: function (data) {
+  processResults: function(data) {
     var ret = data
     if (data[0] && typeof data[0].text !== "string") {
       ret = []
       for (var i = 0; i < data.length; i++) {
         for (var j = 0; j < data[i].text.length; j++) {
-          ret.push({text: data[i].text[j], id: data[i].id})
+          ret.push({
+            text: data[i].text[j],
+            id: data[i].id
+          })
         }
       }
     }
     console.log(ret)
-    return {results: ret}
+    return {
+      results: ret
+    }
   },
   minimumInputLength: 3
 }
 
-function ajaxInit(val){
-  $.ajax("https://kamusi-cls-backend.herokuapp.com/userlangs/" + val, {
-    success: function(data){
-      data = JSON.parse(data)
+function ajaxInit(val, code) {
+  val = val || ""
+  $.ajax("https://kamusi-cls-backend.herokuapp.com/userlangs/" + val.toLowerCase(), {
+    dataType: "json",
+    success: function(data) {
       var ret = data.slice()
+      ret.unshift({id: code, text: val})
       if (data[0] && typeof data[0].text !== "string") {
         ret = []
         for (var i = 0; i < data.length; i++) {
           for (var j = 0; j < data[i].text.length; j++) {
-            ret.push({text: data[i].text[j], id: data[i].id})
+            ret.push({
+              text: data[i].text[j],
+              id: data[i].id
+            })
           }
         }
       }
       userlangSelector.select2({
         data: ret,
         ajax: userlangAJAX,
-        dir: rtlLangs.has(data[0].id) ? "rtl" : "ltr",
+        dir: rtlLangs.has(ret[0].id) ? "rtl" : "ltr",
         width: 500
       })
       userlangSelector.trigger('change')
@@ -66,7 +76,7 @@ function ajaxInit(val){
       //   userlangSelector.select2({dir: rtlLangs.has(userlangSelector.val()) ? "rtl" : "ltr"})
       // })
     },
-    error: function(err){
+    error: function(err) {
       throw err
     }
   })
@@ -75,7 +85,7 @@ function ajaxInit(val){
 // avoid duplicate selectors
 var userlangSelector, codeDisp
 
-$(document).ready(function () {
+$(document).ready(function() {
 
   // initialize userlang selector
   userlangSelector = $("#userlang")
@@ -86,14 +96,14 @@ $(document).ready(function () {
     width: 500
   })
 
-  userlangSelector.change(function (e) {
+  userlangSelector.change(function(e) {
     codeDisp.text(userlangSelector.val())
     loadLang(userlangSelector.val())
   })
 
   const params = getQueryParams(document.location.search)
-  if (params["lang"])
-    ajaxInit(params["lang"])
+  if (params["lang"] && params["code"])
+    ajaxInit(params["lang"], params["code"])
   else {
     ajaxInit()
   }

@@ -12,18 +12,25 @@ function displayWheels(start, stop) {
   let html = ""
 
   for (let lang of disp)
-    html += "<a href='viewer.html?lang=" + lang.code +
-    "'class='wheel-card ui-button ui-widget ui-corner-all " + lang.type + "' id='" + lang.code + "'>" +
-    "<div class='code'>" + lang.code + "</div>"
-    // "<div class='name'>" + + "</div>"
-    +
-    "<div class='wheel' id='wheel-" + lang.code + "'></div>" +
+    html += "<a href='viewer.html?lang=" + lang.code + "&code=" + lang.code + 
+    "'class='wheel-card ui-button ui-widget ui-corner-all " + lang.type + "' id='" + lang.code + "'><div>" +
+    "<span class='name'>" + "</span> (" +
+    "<i class='code'>" + lang.code + "</i>)" +
+    "</div><div class='wheel' id='wheel-" + lang.code + "'></div>" +
     "</a>"
 
   wheelsContainerEl.innerHTML = html
 
-  for (let lang of disp)
+  for (let lang of disp){
+    $.ajax("https://kamusi-cls-backend.herokuapp.com/engname/" + lang.code, {
+      dataType: "text",
+      success: function(name){
+        $("#" + lang.code + " .name").text(name)
+        $("#" + lang.code).attr("href", "viewer.html?lang=" + name + "&code=" + lang.code)
+      }
+    })
     updateWheel(document.getElementById("wheel-" + lang.code), WHEEL_SIZE, lang.wheel)
+  }
 }
 
 // Load full list of codes
