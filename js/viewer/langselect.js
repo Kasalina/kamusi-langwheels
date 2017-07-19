@@ -19,20 +19,6 @@ var rtlLangs = new Set([
   "pa_Arab"
 ])
 
-function getQueryParams(qs) {
-    qs = qs.split('+').join(' ');
-
-    var params = {},
-        tokens,
-        re = /[?&]?([^=]+)=([^&]*)/g;
-
-    while (tokens = re.exec(qs)) {
-        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
-    }
-
-    return params;
-}
-
 const userlangAJAX = {
   url: function (params) {
     return 'https://kamusi-cls-backend.herokuapp.com/userlangs/' + (params.term || "")
