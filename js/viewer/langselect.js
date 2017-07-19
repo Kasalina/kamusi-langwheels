@@ -72,9 +72,11 @@ function ajaxInit(val, code) {
       })
       userlangSelector.trigger('change')
 
-      // userlangSelector.change(function(){
-      //   userlangSelector.select2({dir: rtlLangs.has(userlangSelector.val()) ? "rtl" : "ltr"})
-      // })
+      userlangSelector.change(function(){
+        userlangSelector.select2(
+          {dir: rtlLangs.has(userlangSelector.val()) ? "rtl" : "ltr", width: 500}
+        )
+      })
     },
     error: function(err) {
       throw err
