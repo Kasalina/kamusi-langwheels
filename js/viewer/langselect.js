@@ -42,7 +42,6 @@ const userlangAJAX = {
 }
 
 function ajaxInit(val){
-  console.log(val)
   $.ajax("https://kamusi-cls-backend.herokuapp.com/userlangs/" + val, {
     success: function(data){
       data = JSON.parse(data)

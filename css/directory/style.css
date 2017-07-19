@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+#search, #controls {
+  width: 46%;
+  margin: 2%;
+  display: block;
+  /*border: 1px solid purple;*/
+}
+
+#search {
+  float: left;
+}
+
+#controls {
+  float: right;
+  text-align: right;
+}
+
+.wheel-card {
+  display: block;
+  float: left;
+  margin: 2%;
+}
+
+.wheel-card .code {}
+
+.wheel-card .wheel {}
