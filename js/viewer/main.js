@@ -48,7 +48,7 @@ function loadLang(code) {
       updateUI()
     },
     error: function(data) {
-      alert("Couldn't find data for code!")
+      console.log("Couldn't find data for code!")
     }
   })
 }
