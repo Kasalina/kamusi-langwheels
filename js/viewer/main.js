@@ -1,6 +1,7 @@
 const mainWheelEl = document.getElementById("wheel-container")
 const kamusiWheelEl = document.getElementById("kamusi-wheel")
-const MAIN_WHEEL_SIZE = window.innerHeight * 0.6
+const EDIT_WHEEL_SIZE = Math.min(window.innerWidth*0.3, window.innerHeight * 0.6)
+const KAMUSI_WHEEL_SIZE = Math.min(window.innerWidth*0.6, window.innerHeight * 0.7)
 
 const KAMUSI_EMAIL = "contact+colors@kamusi.org"
 const submitEl = document.getElementById("submit")
@@ -22,9 +23,9 @@ function updateKamusiRationale() {
 
 function updateUI() {
   updateMailTo()
-  updateWheel(mainWheelEl, MAIN_WHEEL_SIZE, user_wheel)
+  updateWheel(mainWheelEl, EDIT_WHEEL_SIZE, user_wheel)
   updateKamusiRationale()
-  updateWheel(kamusiWheelEl, MAIN_WHEEL_SIZE, kamusi_wheel)
+  updateWheel(kamusiWheelEl, KAMUSI_WHEEL_SIZE, kamusi_wheel)
 
   for (let i = 0; i < 6; i++) {
     $("[data-target='" + i + "'] [data-color]").removeClass("selected")
