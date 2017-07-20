@@ -1,9 +1,9 @@
 const wheelsContainerEl = document.getElementById("list-of-wheels")
-const backEl = document.getElementById("back")
-const nextEl = document.getElementById("next")
+const backEl = $(document.getElementById("back"))
+const nextEl = $(document.getElementById("next"))
 const wheels = []
 const NUM_WHEELS = 40
-const WHEEL_SIZE = Math.sqrt(window.innerHeight * window.innerWidth * 0.01)
+const WHEEL_SIZE = Math.sqrt(window.innerHeight * window.innerWidth * 0.02)
 
 // Display list of codes
 function displayWheels(start, stop) {
@@ -12,7 +12,7 @@ function displayWheels(start, stop) {
   let html = ""
 
   for (let lang of disp)
-    html += "<a href='viewer.html?lang=" + lang.code + "&code=" + lang.code + 
+    html += "<a href='viewer.html?lang=" + lang.code + "&code=" + lang.code +
     "'class='wheel-card ui-button ui-widget ui-corner-all " + lang.type + "' id='" + lang.code + "'><div>" +
     "<span class='name'>" + "</span> (" +
     "<i class='code'>" + lang.code + "</i>)" +
@@ -21,10 +21,10 @@ function displayWheels(start, stop) {
 
   wheelsContainerEl.innerHTML = html
 
-  for (let lang of disp){
+  for (let lang of disp) {
     $.ajax("https://kamusi-cls-backend.herokuapp.com/engname/" + lang.code, {
       dataType: "text",
-      success: function(name){
+      success: function(name) {
         $("#" + lang.code + " .name").text(name)
         $("#" + lang.code).attr("href", "viewer.html?lang=" + name + "&code=" + lang.code)
       }
@@ -68,26 +68,46 @@ $.ajax("https://kamusi-langwheels-ad6af.firebaseio.com/.json", {
 
 // Set up pagination
 function setupPagination() {
+  if (document.location.hash.indexOf("stop") === -1 ||
+    document.location.hash.indexOf("start") === -1)
+    loadPage(0, 40)
+
   //  get params for start and stop otherwise (O - 40)
-  const params = getQueryParams(document.location.search)
+  const params = getQueryParams(document.location.hash.split("#")[1])
 
   // display the stuff
-  const start = Math.max(parseInt(params.start) || 0, 0)
+  const start = Math.max(parseInt(params.start), 0)
   const stop = Math.min(parseInt(params.stop) || start + NUM_WHEELS, wheels.length)
+  loadPage(start, stop)
+  console.log("setup pagination")
+}
+
+function loadPage(start, stop) {
   displayWheels(start, stop)
+  document.location.hash = "?start=" + start + "&stop=" + stop
+  backEl.off('click')
+  nextEl.off('click')
 
   // set up pagination controls (next page)
-  if (start === 0) {
-    back.classList.add("ui-state-disabled")
-    back.href = "#"
+  if (start <= 0) {
+    backEl.addClass("ui-state-disabled")
   } else {
-    back.href = "index.html?start=" + (start - NUM_WHEELS) + "&stop=" + start
+    backEl.removeClass("ui-state-disabled")
+    backEl.click(() => {
+      console.log("clicked!", [start, stop])
+      loadPage(start - NUM_WHEELS, start)
+    })
   }
 
-  if (stop === wheels.length) {
-    next.href = "#"
-    next.classList.add("ui-state-disabled")
+
+  if (stop >= wheels.length) {
+    nextEl.addClass("ui-state-disabled")
   } else {
-    next.href = "index.html?start=" + stop + "&stop=" + (stop + NUM_WHEELS)
+    nextEl.removeClass("ui-state-disabled")
+    nextEl.click(() => {
+      console.log("clicked!", [start, stop])
+      loadPage(stop, stop + NUM_WHEELS)
+    })
   }
+  console.log("loaded page")
 }
