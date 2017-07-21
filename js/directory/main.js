@@ -5,34 +5,6 @@ const wheels = []
 const NUM_WHEELS = 40
 const WHEEL_SIZE = Math.sqrt(window.innerHeight * window.innerWidth * 0.02)
 
-// Display list of codes
-function displayWheels(start, stop) {
-  // [start, stop - 1]
-  const disp = wheels.slice(start, stop)
-  let html = ""
-
-  for (let lang of disp)
-    html += "<a href='viewer.html?lang=" + lang.code + "&code=" + lang.code +
-    "'class='wheel-card ui-button ui-widget ui-corner-all " + lang.type + "' id='" + lang.code + "'><div>" +
-    "<span class='name'>" + "</span> (" +
-    "<i class='code'>" + lang.code + "</i>)" +
-    "</div><div class='wheel' id='wheel-" + lang.code + "'></div>" +
-    "</a>"
-
-  wheelsContainerEl.innerHTML = html
-
-  for (let lang of disp) {
-    $.ajax("https://kamusi-cls-backend.herokuapp.com/engname/" + lang.code, {
-      dataType: "text",
-      success: function(name) {
-        $("#" + lang.code + " .name").text(name)
-        $("#" + lang.code).attr("href", "viewer.html?lang=" + name + "&code=" + lang.code)
-      }
-    })
-    updateWheel(document.getElementById("wheel-" + lang.code), WHEEL_SIZE, lang.wheel)
-  }
-}
-
 // Load full list of codes
 $.ajax("https://kamusi-langwheels-ad6af.firebaseio.com/.json", {
   dataType: "JSON",
@@ -83,7 +55,8 @@ function setupPagination() {
 }
 
 function loadPage(start, stop) {
-  displayWheels(start, stop)
+  const disp = wheels.slice(start, stop)
+  displayWheels(wheelsContainerEl, disp, WHEEL_SIZE)
   document.location.hash = "?start=" + start + "&stop=" + stop
   backEl.off('click')
   nextEl.off('click')
@@ -94,7 +67,6 @@ function loadPage(start, stop) {
   } else {
     backEl.removeClass("ui-state-disabled")
     backEl.click(() => {
-      console.log("clicked!", [start, stop])
       loadPage(start - NUM_WHEELS, start)
     })
   }
@@ -105,7 +77,6 @@ function loadPage(start, stop) {
   } else {
     nextEl.removeClass("ui-state-disabled")
     nextEl.click(() => {
-      console.log("clicked!", [start, stop])
       loadPage(stop, stop + NUM_WHEELS)
     })
   }

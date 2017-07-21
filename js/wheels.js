@@ -10,11 +10,36 @@ const COLOR_VALUES = {
   "W": "#FFFFFF"
 }
 
+// Display list of codes
+function displayWheels(el, disp, size) {
+  let html = ""
+
+  for (let lang of disp)
+    html += "<a href='viewer.html?lang=" + lang.code + "&code=" + lang.code +
+    "'class='wheel-card ui-button ui-widget ui-corner-all " + lang.type + "' id='" + lang.code + "'><div>" +
+    "<span class='name'>" + "</span> (" +
+    "<i class='code'>" + lang.code + "</i>)" +
+    "</div><div class='wheel' id='wheel-" + lang.code + "'></div>" +
+    "</a>"
+
+  el.innerHTML = html
+
+  for (let lang of disp) {
+    $.ajax("https://kamusi-cls-backend.herokuapp.com/engname/" + lang.code, {
+      dataType: "text",
+      success: function(name) {
+        $("#" + lang.code + " .name").text(name)
+        $("#" + lang.code).attr("href", "viewer.html?lang=" + name + "&code=" + lang.code)
+      }
+    })
+    updateWheel(document.getElementById("wheel-" + lang.code), size, lang.wheel)
+  }
+}
+
 function generateWedgeString(startX, startY, startAngle, endAngle, radius) {
   var x1 = startX - radius * Math.cos(Math.PI * startAngle / 180);
   var y1 = startY - radius * Math.sin(Math.PI * startAngle / 180);
   var x2 = startX - radius * Math.cos(Math.PI * endAngle / 180);
-  ``
   var y2 = startY - radius * Math.sin(Math.PI * endAngle / 180);
 
   var pathString = "M" + startX + " " + startY + " L" + x1 + " " + y1 + " A" + radius + " " + radius + " 0 0 1 " + x2 + " " + y2 + " z";
@@ -36,4 +61,8 @@ function updateWheel(el, size, colors) {
       "stroke-width": sw
     })
   }
+}
+
+function getColorStr(wheelStr) {
+  return Array.from(new Set(wheelStr.split(""))).sort().join("")
 }
