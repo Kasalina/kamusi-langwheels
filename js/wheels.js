@@ -63,6 +63,6 @@ function updateWheel(el, size, colors) {
   }
 }
 
-function getColorStr(wheelStr) {
-  return Array.from(new Set(wheelStr.split(""))).sort().join("")
+function getColorStr(wheel) {
+  return Array.from(new Set(wheel)).sort().join("")
 }

@@ -1,21 +1,34 @@
 const mainWheelEl = document.getElementById("wheel-container")
 const kamusiWheelEl = document.getElementById("kamusi-wheel")
-const EDIT_WHEEL_SIZE = Math.min(window.innerWidth*0.3, window.innerHeight * 0.6)
-const KAMUSI_WHEEL_SIZE = Math.min(window.innerWidth*0.6, window.innerHeight * 0.7)
+const EDIT_WHEEL_SIZE = Math.min(window.innerWidth * 0.3, window.innerHeight * 0.6)
+const KAMUSI_WHEEL_SIZE = Math.min(window.innerWidth * 0.6, window.innerHeight * 0.7)
 
 const KAMUSI_EMAIL = "contact+colors@kamusi.org"
 const submitEl = document.getElementById("submit")
 const userRationaleEl = document.getElementById("user-rationale")
 const kamusiRationaleEl = document.getElementById('kamusi-rationale')
 const proposalExplanationEl = document.getElementById('proposal-explanation')
+const similarEl = document.getElementById("sim")
 
 const MSG_RANDOM = 'You are invited to propose a better color scheme based on your knowledge of the culture and geography where the language is spoken. For example, you might propose a wheel based on the colors of a regional flag or culturally symbolic colors. Click <b>Change This Wheel</b> to create a better design for this language.'
 const MSG_DEFINED = 'If you feel that the proposed colors will cause problems for the people who speak this language, or that the design is too easy to confuse with another language, please click <b>Change This Wheel</b> to create a better design.'
+
+let colors = {}
+let wheels = {}
 
 let kamusi_rationale = ""
 let user_wheel = ["W", "W", "W", "W", "W", "W"]
 let kamusi_wheel = []
 let current_code = ""
+
+$.ajax("https://kamusi-langwheels-ad6af.firebaseio.com/.json", {
+  dataType: "JSON",
+  success: function(data) {
+    colors = data.colors
+    wheels = data.wheels
+    loadLang(current_code)
+  }
+})
 
 function updateKamusiRationale() {
   kamusiRationaleEl.innerHTML = "<b> Our Rationale </b>" + kamusi_rationale
@@ -34,23 +47,32 @@ function updateUI() {
 
   proposalExplanationEl.innerHTML = kamusi_rationale.indexOf("random") === -1 ? MSG_DEFINED : MSG_RANDOM
 
+  if (colors && wheels) {
+    let colorStr = getColorStr(user_wheel)
+    if (colors[colorStr])
+      displayWheels(similarEl,
+        colors[colorStr].map((c) => ({
+          wheel: wheels[c].wheel,
+          type: "", // hackz
+          code: c
+        })),
+        Math.sqrt(window.innerHeight * window.innerWidth * 0.02))
+    else {
+      similarEl.innerHTML = "<h2>No similar wheels</h2>"
+    }
+  }
 }
 
 function loadLang(code) {
   current_code = code
 
-  $.ajax({
-    url: "https://kamusi-langwheels-ad6af.firebaseio.com/wheels/" + code + ".json",
-    success: function(data) {
-      user_wheel = data["wheel"].split("")
-      kamusi_wheel = user_wheel.slice()
-      kamusi_rationale = data["rationale"]
-      updateUI()
-    },
-    error: function(data) {
-      console.log("Couldn't find data for code!")
-    }
-  })
+  if (wheels && wheels[code]) {
+    user_wheel = wheels[code].wheel.split("")
+    kamusi_wheel = user_wheel.slice()
+    kamusi_rationale = wheels[code].rationale
+  }
+
+  updateUI()
 }
 
 function updateMailTo() {

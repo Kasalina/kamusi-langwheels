@@ -107,3 +107,9 @@
 #submit {
   float: right;
 }
+
+.wheel-card {
+  display: block;
+  float: left;
+  margin: 1%;
+}
