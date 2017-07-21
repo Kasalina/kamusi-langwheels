@@ -113,3 +113,12 @@
   float: left;
   margin: 1%;
 }
+
+.wheel-card.human {
+  font-weight: 900;
+}
+
+h3 {
+  padding: 0 2%;
+  font-weight: normal;
+}

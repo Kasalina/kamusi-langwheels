@@ -8,13 +8,14 @@ const submitEl = document.getElementById("submit")
 const userRationaleEl = document.getElementById("user-rationale")
 const kamusiRationaleEl = document.getElementById('kamusi-rationale')
 const proposalExplanationEl = document.getElementById('proposal-explanation')
-const similarEl = document.getElementById("sim")
+const similarEl = document.getElementById("sim-show")
 
 const MSG_RANDOM = 'You are invited to propose a better color scheme based on your knowledge of the culture and geography where the language is spoken. For example, you might propose a wheel based on the colors of a regional flag or culturally symbolic colors. Click <b>Change This Wheel</b> to create a better design for this language.'
 const MSG_DEFINED = 'If you feel that the proposed colors will cause problems for the people who speak this language, or that the design is too easy to confuse with another language, please click <b>Change This Wheel</b> to create a better design.'
 
 let colors = {}
 let wheels = {}
+let humanSelected
 
 let kamusi_rationale = ""
 let user_wheel = ["W", "W", "W", "W", "W", "W"]
@@ -26,6 +27,7 @@ $.ajax("https://kamusi-langwheels-ad6af.firebaseio.com/.json", {
   success: function(data) {
     colors = data.colors
     wheels = data.wheels
+    humanSelected = new Set(Object.keys(data["human_selections"]))
     loadLang(current_code)
   }
 })
@@ -53,7 +55,7 @@ function updateUI() {
       displayWheels(similarEl,
         colors[colorStr].map((c) => ({
           wheel: wheels[c].wheel,
-          type: "", // hackz
+          type: humanSelected.has(c) ? "human" : "random",
           code: c
         })),
         Math.sqrt(window.innerHeight * window.innerWidth * 0.02))
