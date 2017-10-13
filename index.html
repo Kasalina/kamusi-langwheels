@@ -1,45 +1,236 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Kamusi Language Wheels</title>
-
-  <link rel="stylesheet" href="css/select2.min.css">
-  <link rel="stylesheet" href="css/jquery-ui.min.css">
-  <link rel="stylesheet" href="css/directory/style.css">
+    <meta charset="UTF-8">
+    <title>Kamusi Language Wheels</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/readme/style.css">
+    <link rel="shortcut icon"
+          href="favicon.ico"/>
 </head>
-
 <body>
-  <!-- Header for site with explanation -->
 
-  <div id="search">
-    <a class="ui-button ui-widget ui-corner-all" href="viewer.html">Search By Name</a>
-  </div>
+<div id="main">
+    <h1>
+        Language Identification Wheels by Kamusi Project International
+    </h1>
+
+    <h2>
+        Welcome!
+    </h2>
+    <p>
+        If you've been here before, you can <a href="browse.html">browse the current lineup of wheels</a> or <a
+            href="viewer.html">search for a particular language's wheel</a>.
+    </p>
+
+    <p>
+        You can view the source code and contribute on <a href="https://github.com/harankumar/kamusi-langwheels">Github</a>.
+    </p>
+
+    <p>
+        If you're curious about what this project is
+        all about, read on!
+    </p>
+
+    <h2>What are Language Wheels?</h2>
+    <p>
+        A Language Wheel is a colorful graphic to easily identify a language, so you can select it on a website or
+        telephone.
+        Each Wheel is a circle divided into 6 segments, and each segment can be one of 9 colors - resulting in 531,441
+        possible
+        unique combinations. Colors have been custom-selected for all languages spoken by more than one million people
+        and
+        all
+        languages with an official status in any country. For other languages, colors were initially assigned at random;
+        people
+        associated with each language community are eagerly invited to propose better schemes based on
+        locally-appropriate
+        colors <b>through the end of 2017</b>.
+    </p>
+
+    <h2>What problems do Language Wheels solve?</h2>
+
+    <p>
+        Choosing a language on a website or phone can be hard. If you want to read a site in German, do you choose
+        "German",
+        or
+        "Deutsch", or "de", or a picture of the German flag? If you are in Switzerland, where the major languages are
+        German,
+        French, and Italian, you will certainly object to having your language indicated by the flag of Germany, France,
+        or
+        Italy! If you land on a site in another language, do you know the magic word in that language that will get you
+        back
+        to
+        your own language - for example, how would you get to the German version of a site in Japanese? Not even English
+        is
+        easy
+        - should it be identified by the flag of Britain where it was born or the American flag where it has the most
+        native
+        speakers, and what about the prevalence of English in Australia, Canada, or South Africa? What if a language has
+        different variations, such as Canadian French versus the French of France?
+    </p>
+    <p>
+        A <a href="https://www.migros.ch/de.html" target="_blank">Swiss site with 3 languages</a> is already tough.
+        Choosing
+        among 19 languages, such as <a href="http://www.wordreference.com/" target="_blank">WordReference.com,</a> leads
+        to
+        some
+        very complicated menus. A list of 46 languages, like Global Voices <a href="https://globalvoices.org"
+                                                                              target="_blank">(visit
+        them!)</a> gets really messy. And, as technology becomes ever more ubiquitous, a <a
+            href="https://indigenoustweets.com" target="_blank">digital presence could emerge</a> for any of more than
+        7000
+        languages.
+    </p>
+    <p>
+        Language Wheels solve these problems by offering a consistent and unique visual identifier for each language,
+        and
+        even
+        for each known language variety. Just as the <a href="https://www.britannica.com/topic/flag-of-France"
+                                                        target="_blank">French</a>,
+        <a href="https://www.britannica.com/topic/flag-of-the-Netherlands" target="_blank">Dutch</a>, and <a
+            href="https://www.britannica.com/topic/flag-of-Russia" target="_blank">Russians</a> learn to identify and
+        distinguish their national flags, people can quickly learn Wheels for the languages that interest them. Then,
+        whenever
+        they see their Wheel, they know they've found their language.
+    </p>
+    <p>
+        This site makes it easy for web and app developers to download and install the Wheels they need, using vector
+        graphics
+        that scale to any size. Language selection menus with embedded Wheels are also available.
+    </p>
+    
+    <h2>How are colors decided?</h2>
+    <p>
+        At Kamusi, we believe that all languages are equal, but in digital media <a
+            href="https://www.quora.com/George-Orwell-author-said-All-animals-are-equal-but-some-animals-are-more-equal-than-others-What-does-that-mean"
+            target="_blank">some are more equal than others</a>. We began by randomly generating colors for each
+        language
+        with an ISO 639-3 code, as well as identified sub-varieties. We tamed the randomness with visual heuristics, for
+        example
+        assigning the same color to two contiguous segments as often as possible, or alternatively having the same color
+        in
+        directly opposite segments.
+    </p>
+    <p>
+        We reversed this egalitarian approach for languages with a large digital presence, any official legal status, or
+        more
+        than a million speakers. High numbers of people seek services in those languages, with the most-digitized
+        languages
+        being the most important to identify for the most people. Mega-languages like English, Chinese, Spanish, and
+        Arabic
+        should be identifiable at a glance.
+    </p>
+    <p>
+        When selecting colors for customization, we began by considering whether there was a close association with a
+        national
+        flag. However, flags were problematic, with at least 13 languages married to red, white, and blue! We tweaked
+        the
+        Wheels
+        to use those colors in distinct patterns for English, French, Russian, and others. For some languages, though,
+        we
+        looked
+        to other colors of significance to their speakers - for example, we ditched the red-white-blue Dutch flag in
+        favor
+        of
+        the orange and white of their national football uniform.
+    </p>
+    <p>
+        For the 11 official languages of South Africa, we started with variations on the colors of that country's flag.
+        We
+        reduced the possibility for confusion, though, by using the flags of neighboring countries for languages widely
+        spoken
+        elsewhere, such as the colors of Botswana's flag for the Setswana language. We selected the <a
+            href="https://en.wikipedia.org/wiki/Flag_of_Cusco" target="_blank">Flag of Cusco</a> as the basis for the
+        vibrant Quechua Wheel, and made many similar judgements for several hundred languages.
+    </p>
+    <p>
+        If you are reading this, color selection is not final! We do not have the personnel or expertise to make manual
+        proposals for every language in the world. We therefore invite and implore you to help in this task. Please
+        adopt a
+        country or group of languages, use our "Change This Wheel" tool, and submit better proposals for the Wheels that
+        are
+        still based on random generation.
+    </p>
+    <h2>Your Role: Open Comments Until 1 January, 2018!</h2>
+    <p>
+        If you are reading this, color selection is not final! We do not have the personnel or expertise to make manual
+        proposals for every language in the world. We therefore invite and implore you to help in this task. Please
+        adopt a
+        country or group of languages, use our "Change This Wheel" tool, and submit better proposals for the Wheels that
+        are
+        still based on random generation.
+    </p>
+
+    <p>
+        Guidelines for submitting a wheel:
+    </p>
+    <ul>
+        <li>Use colors that have meaning locally.</li>
+        <li>For a set of languages that are related, consider having a consistent scheme on one part of the Wheel, and
+            varying
+            the
+            colors on the other part. Don't go overboard on consistency, however - for example, it would be impossible
+            to
+            distinguish the 800 languages of Papua New Guinea if they were all based on the black-white-red-orange of
+            that
+            country's
+            flag.
+        </li>
+        <li>Arrange colors in memorable patterns, such as making one color repeat next to itself or across from
+            itself.
+        </li>
+        <li>Check the "Similar Wheels" tab to make sure your scheme, or something too much like it, is not already being
+            used.
+        </li>
+        <li>In the "Rationale" space, explain why the Wheel represents the language, in at most a few sentences.</li>
+
+    </ul>
 
 
-  <div id="controls">
-    <div id="back" class='ui-button ui-widget ui-corner-all'>&lt; Back</div>
-    <div id="next" class='ui-button ui-widget ui-corner-all'>Next Page &gt;</div>
-  </div>
+    <h2>Our Goal: An International Standard</h2>
 
-  <div class="wrapper">
-    <h3>Bolding indicates that a language wheel is human selected and unlikely to change. The remaining wheels are randomly generated and likely to be reassigned.</h3>
-    <div id="list-of-wheels">
+    Wheels are a simple solution to a problem for any digital service that operates in more than one language. Until
+    now,
+    each developer has had to tackle the problem afresh - reinventing the wheel on every website, so to speak. Were the
+    software industry to have a systematic way of representing languages graphically, a lot of hassle would be saved in
+    supporting multilingual services. Meanwhile, consumers would benefit from a consistent experience that made it quick
+    and
+    easy to identify services in their own languages.
 
-    </div>
-    <div class="push"></div>
-  </div>
+    After the Wheel color schemes have been finalized with the input of interested communities, we will prepare a
+    proposal
+    for the International Standards Organization to adopt these icons as a global standard. The next meeting of <a
+        href="https://www.iso.org/committee/48104.html" target="_blank">ISO/TC37</a>, the technical committee
+    responsible for approving terminology and other language and content resources, will occur in June 2018. Our hope is
+    to
+    have a proposal ready for that meeting, although this timeframe might be optimistic. And, if the graphics become a
+    truly
+    popular visual mechanism for referencing language names, perhaps they could become part of the UNICODE character
+    set,
+    like the emoji set that now makes all national flags easily accessible as standard characters across operating
+    systems.
 
+    <h2>Credits and Copyright</h2>
+    <p>
+        Language Identification Wheels were conceived by Martin Benjamin and implemented by Haran Kumar as a 2017
+        internship
+        project at <a href="http://kamusi.org/info/kamusilabs" target="_blank">Kamusi Labs</a>.
+    </p>
 
-
-  <script src="js/svg.min.js"></script>
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/select2.full.min.js"></script>
-  <script src="js/jquery-ui.min.js"></script>
-  <script src="js/wheels.js"></script>
-  <script src="js/utils.js"></script>
-  <script src="js/directory/main.js"></script>
+    <p>
+        Language Identification Wheels are distributed under the terms of the CC BY 4.0 <a
+            href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution</a>
+        international license. You are free to share (copy and redistribute the material in any medium or format) and
+        adapt
+        )remix, transform, and build upon the material for any purpose, even commercially), provided you give
+        appropriate
+        credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable
+        manner,
+        but
+        not in any way that suggests the licensor endorses you or your use.
+    </p>
+</div>
 </body>
-
 </html>
