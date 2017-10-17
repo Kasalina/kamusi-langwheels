@@ -1,8 +1,20 @@
+body {
+    background: url("../../kikoi.jpg");
+}
+
 #main {
-    padding: 4% 15%;
+    padding: 2% 5%;
+    margin: 2% 10%;
+    background: #55676c;
+    border-radius: 20px;
+    color: #FFD29D;
 }
 
 h1, h2, h3, h4, h5, h6 {
     padding-top: 2%;
-    color: #000;
+    color: #F7DB8E;
+}
+
+a {
+    color: #FF9800;
 }

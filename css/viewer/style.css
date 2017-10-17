@@ -1,124 +1,151 @@
+body {
+    background: url("../../kikoi.jpg");
+}
+
 #main {
-  text-align: center;
-  width: 100%;
+    text-align: center;
+    /*width: 100%;*/
+    background: #55676c;
+    color: #F7DB8E;
+    padding: 1%;
+    margin: 2%;
+    width: 94%;
+}
+
+#tabs, #view, #edit, #sim {
+    color: #FFD29D;
+    background: #55676c;
+
+}
+
+#tabs ul, #tabs ul li {
+    color: purple;
+    background: #55676c;
+}
+
+#tabs ul li a {
+    color: #FFD29D;
 }
 
 #view {
-  text-align: center;
-  width: 100%;
+    text-align: center;
+    /*width: 100%;*/
 }
 
 #edit {
-  text-align: center;
-  width: 100%;
-  display: table;
+    text-align: center;
+    /*width: 100%;*/
+    display: table;
 }
 
 .clearfix::before, .clearfix::after {
-  content: "";
-  display: table;
+    content: "";
+    display: table;
 }
 
 .clearfix::after {
-  clear: both;
+    clear: both;
 }
 
 .clearfix {
-  zoom: 1;
-  /* For IE 6/7 (trigger hasLayout) */
+    zoom: 1;
+    /* For IE 6/7 (trigger hasLayout) */
 }
 
 #userlang-select-container {
-  text-align: center;
+    text-align: center;
 }
 
 #code {
-  text-align: center;
-  font-style: italic;
+    text-align: center;
+    font-style: italic;
 }
 
 #proposal-explanation {
-  padding: 0 20%;
+    padding: 0 20%;
 }
 
 .color-option {
-  border: 2px solid black;
-  margin: 4px 2px 2px 2px;
-  width: 30px;
-  height: 30px;
+    border: 2px solid black;
+    margin: 4px 2px 2px 2px;
+    width: 30px;
+    height: 30px;
 }
 
 [data-target="5"] .color-option, [data-target="4"] .color-option, [data-target="3"] .color-option {
-  float: right
+    float: right
 }
 
 [data-target="0"] .color-option, [data-target="1"] .color-option, [data-target="2"] .color-option {
-  float: left
+    float: left
 }
 
 .color-option.selected {
-  border: 4px solid black;
-  padding: 2px;
-  margin: 0px;
+    border: 4px solid black;
+    padding: 2px;
+    margin: 0px;
 }
 
 .color-option.R {
-  background: #FF0000
+    background: #FF0000
 }
 
 .color-option.O {
-  background: #FF8000
+    background: #FF8000
 }
 
 .color-option.Y {
-  background: #FFFF00
+    background: #FFFF00
 }
 
 .color-option.G {
-  background: #008000
+    background: #008000
 }
 
 .color-option.A {
-  background: #00FFFF
+    background: #00FFFF
 }
 
 .color-option.B {
-  background: #0000FF
+    background: #0000FF
 }
 
 .color-option.P {
-  background: #800080
+    background: #800080
 }
 
 .color-option.W {
-  background: #FFFFFF
+    background: #FFFFFF
 }
 
 .color-option.X {
-  background: #000000
+    background: #000000
 }
 
 #user-rationale {
-  width: 100%;
-  height: 100%;
-  min-height: 100px;
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
 }
 
 #submit {
-  float: right;
+    float: right;
 }
 
 .wheel-card {
-  display: block;
-  float: left;
-  margin: 1%;
+    display: block;
+    float: left;
+    margin: 1%;
+    background-color: #FFFFE0;
+    color: #627149;
+    border-radius: 10%;
 }
 
 .wheel-card.human {
-  font-weight: 900;
+    font-weight: 900;
 }
 
 h3 {
-  padding: 0 2%;
-  font-weight: normal;
+    padding: 0 2%;
+    font-weight: normal;
 }
