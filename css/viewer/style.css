@@ -10,33 +10,42 @@ body {
     padding: 1%;
     margin: 2%;
     width: 94%;
+    border-radius: 10px;
 }
 
-#tabs, #view, #edit, #sim {
+#view, #edit-container, #sim {
     color: #FFD29D;
     background: #55676c;
-
-}
-
-#tabs ul, #tabs ul li {
-    color: purple;
-    background: #55676c;
-}
-
-#tabs ul li a {
-    color: #FFD29D;
-}
-
-#view {
-    text-align: center;
-    /*width: 100%;*/
+    padding: 1%;
+    margin: 2%;
+    width: 94%;
+    border-radius: 10px;
+    text-align: center
 }
 
 #edit {
-    text-align: center;
-    /*width: 100%;*/
-    display: table;
+    width: 100%;
 }
+
+/*#tabs ul, #tabs ul li {*/
+/*color: purple;*/
+/*background: #55676c;*/
+/*}*/
+
+/*#tabs ul li a {*/
+/*color: #FFD29D;*/
+/*}*/
+
+/*#view {*/
+/*text-align: center;*/
+/*!*width: 100%;*!*/
+/*}*/
+
+/*#edit {*/
+/*text-align: center;*/
+/*!*width: 100%;*!*/
+/*!*display: table;*!*/
+/*}*/
 
 .clearfix::before, .clearfix::after {
     content: "";
@@ -132,13 +141,25 @@ body {
     float: right;
 }
 
+textarea {
+    background: #FFFFE0;
+}
+
+#submit button {
+    background-color: #FFFFE0;
+    padding: 5%;
+    border-radius: 1px;
+    color: #627149;
+}
+
 .wheel-card {
     display: block;
     float: left;
     margin: 1%;
     background-color: #FFFFE0;
     color: #627149;
-    border-radius: 10%;
+    border-radius: 10px;
+    padding: 1%;
 }
 
 .wheel-card.human {

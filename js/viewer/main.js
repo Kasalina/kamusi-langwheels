@@ -92,7 +92,7 @@ function generateMailToString(subject, body) {
 }
 
 $(document).ready(function() {
-  $("#tabs").tabs()
+  // $("#tabs").tabs()
   for (let el of document.getElementsByClassName("color-option")) {
     el.onclick = function() {
       for (let e of el.parentElement.children) {

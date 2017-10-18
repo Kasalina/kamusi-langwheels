@@ -2,192 +2,207 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Kamusi Language Wheels</title>
+    <meta charset="UTF-8">
+    <title>Kamusi Language Wheels</title>
 
-  <link rel="stylesheet" href="css/select2.min.css">
-  <link rel="stylesheet" href="css/jquery-ui.min.css">
-  <link rel="stylesheet" href="css/viewer/style.css">
-  <link rel="shortcut icon"
-        href="favicon.ico"/>
+    <link rel="stylesheet" href="css/select2.min.css">
+    <!--<link rel="stylesheet" href="css/jquery-ui.min.css">-->
+    <link rel="stylesheet" href="css/viewer/style.css">
+    <link rel="shortcut icon"
+          href="favicon.ico"/>
 </head>
 
 <body>
-  <table id="main">
+<table id="main">
     <tr>
-      <td colspan="3" id="userlang-select-container">
-        <select name="userlang" id="userlang">
-            <!--value is the ISO 639-3 code,
-                text is the language's name for itself-->
-            <!--this should be loaded automatically, without user input
-                the default value will be guessed based on HTTP Headers-->
-        </select>
-      </td>
+        <td colspan="3" id="userlang-select-container">
+            <select name="userlang" id="userlang">
+                <!--value is the ISO 639-3 code,
+                    text is the language's name for itself-->
+                <!--this should be loaded automatically, without user input
+                    the default value will be guessed based on HTTP Headers-->
+            </select>
+        </td>
     </tr>
     <tr>
-      <td colspan="3">
-        <div id="code"></div>
-      </td>
+        <td colspan="3">
+            <div id="code"></div>
+        </td>
     </tr>
-  </table>
+</table>
 
-  <div id="tabs">
-    <ul>
-      <li><a href="#view">View Wheel</a></li>
-      <li><a href="#edit">Change This Wheel</a></li>
-      <li><a href="#sim">Similar Wheels</a></li>
-    </ul>
+<div id="tabs">
+    <!--<ul>-->
+    <!--<li><a href="#view">View Wheel</a></li>-->
+    <!--<li><a href="#edit">Change This Wheel</a></li>-->
+    <!--<li><a href="#sim">Similar Wheels</a></li>-->
+    <!--</ul>-->
 
     <div id="view">
-      <div>
-        <div id="proposal-explanation">
+        <h2>View Wheel</h2>
 
-        </div>
         <div>
-          <div id="kamusi-wheel"></div>
+            <div id="proposal-explanation">
+
+            </div>
+            <div>
+                <div id="kamusi-wheel"></div>
+            </div>
+            <div>
+                <i id="kamusi-rationale"></i>
+            </div>
         </div>
-        <div>
-          <i id="kamusi-rationale"></i>
-        </div>
-      </div>
     </div>
+    <div id="edit-container">
+        <table id="edit">
+            <tr>
+                <td colspan="3">
+                    <h2>Change This Wheel</h2>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <h3>Be sure to check <b>Similar Wheels</b> before submitting your proposal.</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="color-select">
+                        <div class="color-select clearfix" data-target="5">
+                            <div class="color-option R" data-color="R"></div>
+                            <div class="color-option O" data-color="O"></div>
+                            <div class="color-option Y" data-color="Y"></div>
+                            <div class="color-option G" data-color="G"></div>
+                            <div class="color-option A" data-color="A"></div>
+                            <div class="color-option B" data-color="B"></div>
+                            <div class="color-option P" data-color="P"></div>
+                            <div class="color-option W selected" data-color="W"></div>
+                            <div class="color-option X" data-color="X"></div>
+                        </div>
+                    </div>
+                </td>
+                <td rowspan="3">
+                    <div id="wheel-container"></div>
+                </td>
+                <td>
+                    <div class="color-select">
+                        <div class="color-select clearfix" data-target="0">
+                            <div class="color-option R" data-color="R"></div>
+                            <div class="color-option O" data-color="O"></div>
+                            <div class="color-option Y" data-color="Y"></div>
+                            <div class="color-option G" data-color="G"></div>
+                            <div class="color-option A" data-color="A"></div>
+                            <div class="color-option B" data-color="B"></div>
+                            <div class="color-option P" data-color="P"></div>
+                            <div class="color-option W selected" data-color="W"></div>
+                            <div class="color-option X" data-color="X"></div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="color-select">
+                        <div class="color-select clearfix" data-target="4">
+                            <div class="color-option R" data-color="R"></div>
+                            <div class="color-option O" data-color="O"></div>
+                            <div class="color-option Y" data-color="Y"></div>
+                            <div class="color-option G" data-color="G"></div>
+                            <div class="color-option A" data-color="A"></div>
+                            <div class="color-option B" data-color="B"></div>
+                            <div class="color-option P" data-color="P"></div>
+                            <div class="color-option W selected" data-color="W"></div>
+                            <div class="color-option X" data-color="X"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="color-select">
+                        <div class="color-select clearfix" data-target="1">
+                            <div class="color-option R" data-color="R"></div>
+                            <div class="color-option O" data-color="O"></div>
+                            <div class="color-option Y" data-color="Y"></div>
+                            <div class="color-option G" data-color="G"></div>
+                            <div class="color-option A" data-color="A"></div>
+                            <div class="color-option B" data-color="B"></div>
+                            <div class="color-option P" data-color="P"></div>
+                            <div class="color-option W selected" data-color="W"></div>
+                            <div class="color-option X" data-color="X"></div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="color-select">
+                        <div class="color-select clearfix" data-target="3">
+                            <div class="color-option R" data-color="R"></div>
+                            <div class="color-option O" data-color="O"></div>
+                            <div class="color-option Y" data-color="Y"></div>
+                            <div class="color-option G" data-color="G"></div>
+                            <div class="color-option A" data-color="A"></div>
+                            <div class="color-option B" data-color="B"></div>
+                            <div class="color-option P" data-color="P"></div>
+                            <div class="color-option W selected" data-color="W"></div>
+                            <div class="color-option X" data-color="X"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="color-select">
+                        <div class="color-select clearfix" data-target="2">
+                            <div class="color-option R" data-color="R"></div>
+                            <div class="color-option O" data-color="O"></div>
+                            <div class="color-option Y" data-color="Y"></div>
+                            <div class="color-option G" data-color="G"></div>
+                            <div class="color-option A" data-color="A"></div>
+                            <div class="color-option B" data-color="B"></div>
+                            <div class="color-option P" data-color="P"></div>
+                            <div class="color-option W selected" data-color="W"></div>
+                            <div class="color-option X" data-color="X"></div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <textarea id="user-rationale" placeholder="Rationale"></textarea>
+                    <a href="#" id="submit">
+                        <button>Submit</button>
+                    </a>
+                </td>
+            </tr>
+        </table>
 
-    <table id="edit">
-      <tr>
-        <td colspan="3">
-          <h3>Be sure to check <b>Similar Wheels</b> before submitting your proposal.</h3>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="color-select">
-            <div class="color-select clearfix" data-target="5">
-              <div class="color-option R" data-color="R"></div>
-              <div class="color-option O" data-color="O"></div>
-              <div class="color-option Y" data-color="Y"></div>
-              <div class="color-option G" data-color="G"></div>
-              <div class="color-option A" data-color="A"></div>
-              <div class="color-option B" data-color="B"></div>
-              <div class="color-option P" data-color="P"></div>
-              <div class="color-option W selected" data-color="W"></div>
-              <div class="color-option X" data-color="X"></div>
-            </div>
-          </div>
-        </td>
-        <td rowspan="3">
-          <div id="wheel-container"></div>
-        </td>
-        <td>
-          <div class="color-select">
-            <div class="color-select clearfix" data-target="0">
-              <div class="color-option R" data-color="R"></div>
-              <div class="color-option O" data-color="O"></div>
-              <div class="color-option Y" data-color="Y"></div>
-              <div class="color-option G" data-color="G"></div>
-              <div class="color-option A" data-color="A"></div>
-              <div class="color-option B" data-color="B"></div>
-              <div class="color-option P" data-color="P"></div>
-              <div class="color-option W selected" data-color="W"></div>
-              <div class="color-option X" data-color="X"></div>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="color-select">
-            <div class="color-select clearfix" data-target="4">
-              <div class="color-option R" data-color="R"></div>
-              <div class="color-option O" data-color="O"></div>
-              <div class="color-option Y" data-color="Y"></div>
-              <div class="color-option G" data-color="G"></div>
-              <div class="color-option A" data-color="A"></div>
-              <div class="color-option B" data-color="B"></div>
-              <div class="color-option P" data-color="P"></div>
-              <div class="color-option W selected" data-color="W"></div>
-              <div class="color-option X" data-color="X"></div>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div class="color-select">
-            <div class="color-select clearfix" data-target="1">
-              <div class="color-option R" data-color="R"></div>
-              <div class="color-option O" data-color="O"></div>
-              <div class="color-option Y" data-color="Y"></div>
-              <div class="color-option G" data-color="G"></div>
-              <div class="color-option A" data-color="A"></div>
-              <div class="color-option B" data-color="B"></div>
-              <div class="color-option P" data-color="P"></div>
-              <div class="color-option W selected" data-color="W"></div>
-              <div class="color-option X" data-color="X"></div>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="color-select">
-            <div class="color-select clearfix" data-target="3">
-              <div class="color-option R" data-color="R"></div>
-              <div class="color-option O" data-color="O"></div>
-              <div class="color-option Y" data-color="Y"></div>
-              <div class="color-option G" data-color="G"></div>
-              <div class="color-option A" data-color="A"></div>
-              <div class="color-option B" data-color="B"></div>
-              <div class="color-option P" data-color="P"></div>
-              <div class="color-option W selected" data-color="W"></div>
-              <div class="color-option X" data-color="X"></div>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div class="color-select">
-            <div class="color-select clearfix" data-target="2">
-              <div class="color-option R" data-color="R"></div>
-              <div class="color-option O" data-color="O"></div>
-              <div class="color-option Y" data-color="Y"></div>
-              <div class="color-option G" data-color="G"></div>
-              <div class="color-option A" data-color="A"></div>
-              <div class="color-option B" data-color="B"></div>
-              <div class="color-option P" data-color="P"></div>
-              <div class="color-option W selected" data-color="W"></div>
-              <div class="color-option X" data-color="X"></div>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3">
-          <textarea id="user-rationale" placeholder="Rationale"></textarea>
-          <a href="#" id="submit"><button>Submit</button></a>
-        </td>
-      </tr>
-    </table>
+    </div>
 
     <div id="sim" class="clearfix">
-      <div>
-        <h3><b>Bolding</b> indicates that a language wheel is human selected and unlikely to change.
-          The remaining wheels are randomly generated and likely to be reassigned.
-        </h3>
-        <h3><i>Avoid conflicts with human selected languages unless your proposal has a compelling reason for it.</i></h3>
-      </div>
-      <div id="sim-show">
+        <h2>
+            Similar Wheels
+        </h2>
+        <div>
+            <h3><b>Bolding</b> indicates that a language wheel is human selected and unlikely to change.
+                The remaining wheels are randomly generated and likely to be reassigned.
+            </h3>
+            <h3><i>Avoid conflicts with human selected languages unless your proposal has a compelling reason for
+                it.</i></h3>
+        </div>
+        <div id="sim-show">
 
-      </div>
+        </div>
     </div>
 
-  </div>
+</div>
 
 
-  <script src="js/svg.min.js"></script>
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/select2.full.min.js"></script>
-  <script src="js/jquery-ui.min.js"></script>
-  <script src="js/wheels.js"></script>
-  <script src="js/utils.js"></script>
-  <script src="js/viewer/main.js"></script>
-  <script src="js/viewer/langselect.js"></script>
+<script src="js/svg.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/select2.full.min.js"></script>
+<!--<script src="js/jquery-ui.min.js"></script>-->
+<script src="js/wheels.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/viewer/main.js"></script>
+<script src="js/viewer/langselect.js"></script>
 </body>
 
 </html>
