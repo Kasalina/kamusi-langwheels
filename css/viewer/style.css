@@ -178,3 +178,16 @@ h3 {
     padding: 0 2%;
     font-weight: normal;
 }
+.links {
+    padding: 1%;
+}
+
+.links a {
+    border-radius: 1%;
+    background: #F7DB8E;
+    color: #FF9800;
+    border: none;
+    padding: 0.5%;
+    /*padding: 2.5%;*/
+    text-decoration: none;
+}
