@@ -160,11 +160,19 @@ textarea {
     color: #627149;
     border-radius: 10px;
     padding: 1%;
+    text-decoration: none;
 }
 
-.wheel-card.human {
-    font-weight: 900;
+.human {
+    background-image: url(../../human.png);
+    background-repeat: no-repeat;
 }
+
+.random {
+    background-image: url(../../robot.png);
+    background-repeat: no-repeat;
+}
+
 
 h3 {
     padding: 0 2%;

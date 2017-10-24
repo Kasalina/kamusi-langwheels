@@ -16,10 +16,11 @@ function displayWheels(el, disp, size) {
 
   for (let lang of disp)
     html += "<a href='viewer.html?lang=" + lang.code + "&code=" + lang.code +
-    "'class='wheel-card ui-button ui-widget ui-corner-all " + lang.type + "' id='" + lang.code + "'><div>" +
+    "'class='wheel-card ui-button ui-widget ui-corner-all' id='" + lang.code + "'><div>" +
     "<span class='name'>" + "</span> (" +
-    "<i class='code'>" + lang.code + "</i>)" +
+    "<i class='code'>" + lang.code + "</i>)" + 
     "</div><div class='wheel' id='wheel-" + lang.code + "'></div>" +
+    "<div> Assigned by " + "<span class='icon " + lang.type + "'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>" + "</div>" + 
     "</a>"
 
   el.innerHTML = html
