@@ -2,15 +2,39 @@ body {
     background: url("../../kikoi.jpg");
 }
 
-#main {
+a {
+    text-decoration: none !important;
+}
+
+#header {
+    background: #FFD700;
+    color: #55676c;
+    font-size: 50px;
+    border: 5px solid #AB3939;
+}
+
+#header td {
+    vertical-align: middle;
+}
+
+#header img {
+    height: 50px;
+    /*vertical-align: middle;*/
+}
+
+#main, #header {
     text-align: center;
     /*width: 100%;*/
-    background: #55676c;
-    color: #F7DB8E;
     padding: 1%;
     margin: 2%;
     width: 94%;
     border-radius: 10px;
+
+}
+
+#main {
+    background: #55676c;
+    color: #F7DB8E;
 }
 
 #view, #edit-container, #sim {

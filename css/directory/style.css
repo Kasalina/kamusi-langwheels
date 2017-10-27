@@ -8,6 +8,36 @@ html, body {
     background: url("../../kikoi.jpg");
 }
 
+a {
+    text-decoration: none !important;
+}
+
+#banner {
+    background: #FFD700;
+    color: #55676c;
+    font-size: 50px;
+    border: 5px solid #AB3939;
+    text-align: center;
+    /*width: 100%;*/
+    padding: 1%;
+    margin: 2%;
+    width: 94%;
+    border-radius: 10px;
+}
+
+#banner td {
+    vertical-align: middle;
+}
+
+#banner img {
+    height: 50px;
+    /*vertical-align: middle;*/
+}
+
+#banner {
+
+}
+
 #header {
     margin: 20px;
     padding: 20px;
