@@ -2,40 +2,32 @@ body {
     background: url("../../kikoi.jpg");
 }
 
-#main {
-    padding: 2% 5%;
+#wrapper {
     margin: 2% 10%;
-    background: #55676c;
-    border-radius: 20px;
-    color: #FFD29D;
 }
 
-a {
-    text-decoration: none !important;
+#wrapper > *, #banner img {
+    border-radius: 10px;
+    padding: 2% 5%;
 }
 
 #banner {
-    background: #FFD700;
-    color: #55676c;
-    font-size: 50px;
+    width: 100%;
+    margin-bottom: 5%;
     border: 5px solid #AB3939;
-    text-align: center;
-    /*width: 100%;*/
-    padding: 5%;
-    margin: 2% auto;
-    width: 70%;
-    border-radius: 10px;
-}
-
-#banner td {
-    vertical-align: middle;
+    background: #FFD700;
 }
 
 #banner img {
-    /*height: 50px;*/
-    /*vertical-align: middle;*/
     background: white;
-    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#main {
+    background: #55676c;
+    color: #FFD29D;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -45,4 +37,5 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
     color: #FF9800;
+    text-decoration: none !important;
 }
