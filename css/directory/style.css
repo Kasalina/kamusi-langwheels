@@ -21,7 +21,7 @@ a {
     /*width: 100%;*/
     padding: 1%;
     margin: 2%;
-    width: 94%;
+    width: 96%;
     border-radius: 10px;
 }
 
@@ -39,8 +39,9 @@ a {
 }
 
 #header {
-    margin: 20px;
-    padding: 20px;
+    padding: 1%;
+    margin: 2%;
+    width: 94%;
     background: #CEA899;
     color: #55676c;
     border-radius: 20px;
@@ -74,13 +75,13 @@ a {
     font-weight: normal;
 }
 
-.wheel-card {
-    display: block;
-    float: left;
+.wrapper {
+    padding: 1%;
     margin: 2%;
-    background-color: #FFFFE0;
-    color: #627149;
-    border-radius: 10%;
+    width: 94%;
+    background: #CEA899;
+    color: #55676c;
+    border-radius: 20px;
 }
 
 .human {
@@ -93,10 +94,27 @@ a {
     background-repeat: no-repeat;
 }
 
-.wheel-card .code {
-
+.wheel-card {
+    display: block;
+    float: left;
+    margin: 1%;
+    background-color: #FFFFE0;
+    color: #627149;
+    border-radius: 10px;
+    padding: 1%;
+    text-decoration: none;
 }
 
-.wheel-card .wheel {
+.clearfix::before, .clearfix::after {
+    content: "";
+    display: table;
+}
 
+.clearfix::after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+    /* For IE 6/7 (trigger hasLayout) */
 }
