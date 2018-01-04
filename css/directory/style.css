@@ -46,13 +46,13 @@ a {
     border-radius: 20px;
 }
 
-#search, #controls {
+#controls {
     width: 46%;
     margin: 2%;
     display: block;
 }
 
-#back, #next, #search a {
+#back, #next, #search {
     border-radius: 1%;
     background: #F7DB8E;
     color: #FF9800;
@@ -60,8 +60,8 @@ a {
     padding: 1%;
 }
 
-#search {
-    float: left;
+#search a {
+    color: #FF9800 !important;
 }
 
 #controls {
